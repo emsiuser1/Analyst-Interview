@@ -4,6 +4,12 @@ import styled from 'styled-components';
 
 import { getOccData} from '../reducers'
 
+// things to do:
+// put the th into a separate component and .map into the table
+// fix variable name occData[0] to be more readable
+// potentially re-use some styled components?
+// comment code
+
 const Div = styled.div`
 	margin-left: 2%;
 	margin-top: 2%;

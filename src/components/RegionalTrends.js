@@ -3,6 +3,9 @@ import { Line } from 'react-chartjs-2';
 import styled from 'styled-components'
 //npm install chart.js --save
 
+import { getJsonData } from '../reducers'
+import { useSelector } from 'react-redux'
+
 const RegionalTrends = () => {
 
 	const Div = styled.div`
@@ -10,19 +13,20 @@ const RegionalTrends = () => {
 		width: 96%;
 	`
 	const [regional, setRegional] = useState([])
-	const [state, setState] = useState([])
-	const [nation, setNation] = useState([])
 
+	const occData = useSelector(getJsonData)
+	console.log(occData)
 	useEffect(() => {
-		fetch('http://127.0.0.1:5000/json-file')
-			.then(res => res.json())
-			.then(data => {
-				setRegional(data['trend_comparison']['regional'])
-				setState(data['trend_comparison']['state'])
-				setNation(data['trend_comparison']['nation'])
-			})
-	}, [])
-
+		if (occData['trend_comparison'] !== undefined) {
+			const tmp = {
+				regional: occData['trend_comparison']['regional'],
+				state: occData['trend_comparison']['state'],
+				nation: occData['trend_comparison']['nation']
+			}	
+			setRegional(tmp)
+		}
+	}, [occData])
+	
 
 
 	const data = {
@@ -31,21 +35,21 @@ const RegionalTrends = () => {
 			{
 				label: 'Regional Trends',
 				fill: false,
-				data: regional,
+				data: regional.regional,
 				borderColor: '#204354',
 				backgroundColor: '#41d592'
 			},
 			{
 				label: 'State Trends',
 				fill: false,
-				data: state,
+				data: regional.state,
 				borderColor: '#41d592',
 				backgroundColor: '#204354'
 			},
 			{
 				label: 'National Trends',
 				fill: false,
-				data: nation,
+				data: regional.nation,
 				borderColor: 'red',
 				backgroundColor: '#204354'
 			}

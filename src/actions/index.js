@@ -4,3 +4,10 @@ export const setOccData = (res) => {
 		payload: res
 	}
 }
+
+export const setJsonData = (res) => {
+	return {
+		type: 'SETJSONDATA',
+		payload: res
+	}
+}

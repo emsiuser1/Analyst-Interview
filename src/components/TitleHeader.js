@@ -4,16 +4,21 @@ import styled from 'styled-components';
 
 import { getOccData} from '../reducers'
 
+
+//To do: 
+//Fix occData variable name to be more user friendly
+
 const Title = styled.h3`
 	color: #204354;
 `
-const Header = styled.h2`
+const Header = styled.h1`
 	color: #204354;
 `
 
 const Div = styled.div`
 	margin-left: 2%;
 `
+
 
 const TitleHeader = () => {
 

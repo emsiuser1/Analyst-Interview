@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setOccData } from '../actions'
-import { getOccData} from '../reducers'
+import { setOccData, setJsonData } from '../actions'
+import { getOccData, getJsonData } from '../reducers'
 
 const EarningsData = () => {
 
@@ -13,6 +13,11 @@ const EarningsData = () => {
 			.then(res => res.json())
 			.then(data => {
 				dispatch(setOccData(data))
+			})
+		fetch('http://127.0.0.1:5000/json-file')
+			.then(res => res.json())
+			.then(data => {
+				dispatch(setJsonData(data))
 			})
 	}, [])
 
