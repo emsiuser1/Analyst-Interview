@@ -4,6 +4,10 @@ import styled from 'styled-components';
 
 import { getOccData, getJsonData } from '../reducers'
 
+
+// Add the ability 
+
+
 const TD = styled.td`
 	text-align: left;
 `
