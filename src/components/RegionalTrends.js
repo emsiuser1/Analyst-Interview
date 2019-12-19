@@ -14,23 +14,7 @@ const RegionalTrends = () => {
 	const Div = styled.div`
 		margin-left: 2%;
 		width: 96%;
-	`
-	const [regional, setRegional] = useState([])
-
-	const occData = useSelector(getJsonData)
-	console.log(occData)
-	useEffect(() => {
-		if (occData['trend_comparison'] !== undefined) {
-			const tmp = {
-				regional: occData['trend_comparison']['regional'],
-				state: occData['trend_comparison']['state'],
-				nation: occData['trend_comparison']['nation']
-			}	
-			setRegional(tmp)
-		}
-	}, [occData])
-	
-
+	` 
 
 	const data = {
 		labels: [2013, 2014, 2015, 2016, 2017, 2018],
@@ -38,22 +22,22 @@ const RegionalTrends = () => {
 			{
 				label: 'Regional Trends',
 				fill: false,
-				data: regional.regional,
+				data: [1,2,3,4,5, 10],
 				borderColor: '#204354',
 				backgroundColor: '#41d592'
 			},
 			{
 				label: 'State Trends',
 				fill: false,
-				data: regional.state,
+				data: [8,4,6,0,1, 4],
 				borderColor: '#41d592',
 				backgroundColor: '#204354'
 			},
 			{
 				label: 'National Trends',
 				fill: false,
-				data: regional.nation,
-				borderColor: 'red',
+				data: [5,1,1,2,12,2],
+				borderColor: '#5b5aec',
 				backgroundColor: '#204354'
 			}
 

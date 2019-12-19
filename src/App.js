@@ -5,6 +5,7 @@ import TitleHeader from './components/TitleHeader'
 import OccDataTable from './components/OccDataTable'
 import RegionalTrends from './components/RegionalTrends'
 import IndustryTable from './components/IndustryTable'
+import JobsTable from './components/JobsTable'
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -21,6 +22,7 @@ const App = () => {
       <TitleHeader />
       <OccDataTable />
       <RegionalTrends />
+      <JobsTable />
       <IndustryTable />
     </div>
   )

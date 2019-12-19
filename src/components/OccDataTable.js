@@ -10,6 +10,8 @@ import { getOccData, getJsonData } from '../reducers'
 // potentially re-use some styled components?
 // comment code
 //take equation out of div
+//clean up equation
+//creat more tmp vars
 
 const Div = styled.div`
 	margin-left: 2%;

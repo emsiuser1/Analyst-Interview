@@ -19,7 +19,7 @@ const IndustryCells = () => {
   return (industries['employing_industries'] !== undefined ? industries['employing_industries']['industries'].map((industry, i) => (
   	<tr key={i}>
   		<TD> {industry.title} </TD>
-  		<td> {industry.jobs} </td>
+  		<TD> {industry.jobs} </TD>
   	</tr>
   )) : '')
 }

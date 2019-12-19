@@ -3,10 +3,7 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 import { getOccData} from '../reducers'
-import IndustryCells from './IndustryCells'
-
-//To do:
-//build a styled component for table caption?
+import JobsCells from './JobsCells'
 
 
 const Div = styled.div`
@@ -26,24 +23,22 @@ const Header = styled.h2`
 	color: #204354;
 	margin-left: 2%;
 `
-const TH = styled.th`
-	color: #204354;
-	text-align: left;
-`
 
-const IndustryTable = () => {
+const JobsTable = () => {
 
   return (
   	<Fragment>
-	  	<Header> Industries Employing Computer Programmers </Header>
 	  	<Div>
 	  		<Table>
 	  			<tbody>
 	  				<tr>
-	  					<TH> Industry </TH>
-	  					<TH>  Occupation Jobs in Industry (2015) </TH>
+	  					<th> Region </th>
+	  					<th> 2013 Jobs </th>
+	  					<th> 2018 Jobs </th>
+	  					<th> Change </th>
+	  					<th> %Change </th>
 	  				</tr>
-	  				<IndustryCells />
+	  				<JobsCells />
 	  			</tbody>
 	  		</Table>
 	  	</Div>
@@ -51,4 +46,4 @@ const IndustryTable = () => {
   )
 }
 
-export default IndustryTable;
+export default JobsTable;
