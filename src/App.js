@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import EarningsData from './components/EarningsData'
+import TitleHeader from './components/TitleHeader'
+import OccDataTable from './components/OccDataTable'
+import RegionalTrends from './components/RegionalTrends'
+
+import { useDispatch, useSelector } from 'react-redux';
+
+import { setOccData } from './actions'
+import { getOccData} from './reducers'
+
+const App = () => {
+
+  const dispatch = useDispatch()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <TitleHeader />
+      <EarningsData />
+      <OccDataTable />
+      <RegionalTrends />
     </div>
-  );
+  )
 }
 
 export default App;
