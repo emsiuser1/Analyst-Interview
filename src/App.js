@@ -1,6 +1,6 @@
 import React from 'react';
 
-import EarningsData from './components/EarningsData'
+import GrabData from './components/GrabData'
 import TitleHeader from './components/TitleHeader'
 import OccDataTable from './components/OccDataTable'
 import RegionalTrends from './components/RegionalTrends'
@@ -17,8 +17,8 @@ const App = () => {
 
   return (
     <div>
+      <GrabData />
       <TitleHeader />
-      <EarningsData />
       <OccDataTable />
       <RegionalTrends />
       <IndustryTable />

@@ -37,7 +37,7 @@ const IndustryTable = () => {
 	  			<tbody>
 	  				<tr>
 	  					<th> Industry </th>
-	  					<th>  Occupation Jobs in Industry (2015)</th>
+	  					<th>  Occupation Jobs in Industry (2015) </th>
 	  				</tr>
 	  				<IndustryCells />
 	  			</tbody>

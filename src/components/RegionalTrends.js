@@ -3,6 +3,9 @@ import { Line } from 'react-chartjs-2';
 import styled from 'styled-components'
 //npm install chart.js --save
 
+//fix graph to display correct data
+//turn into percentages
+
 import { getJsonData } from '../reducers'
 import { useSelector } from 'react-redux'
 
@@ -91,7 +94,7 @@ const RegionalTrends = () => {
 
   return (
     <Div>
-    	<Line data={data} options={options} width='15' height='5'/>
+    	<Line data={data} options={options} width={15} height={5}/>
     </Div>
   )
 }
