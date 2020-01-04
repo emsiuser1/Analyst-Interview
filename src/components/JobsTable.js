@@ -23,6 +23,9 @@ const Header = styled.h2`
 	color: #204354;
 	margin-left: 2%;
 `
+const TH = styled.th`
+	text-align: left;
+`
 
 const JobsTable = () => {
 
@@ -32,11 +35,11 @@ const JobsTable = () => {
 	  		<Table>
 	  			<tbody>
 	  				<tr>
-	  					<th> Region </th>
-	  					<th> 2013 Jobs </th>
-	  					<th> 2018 Jobs </th>
-	  					<th> Change </th>
-	  					<th> %Change </th>
+	  					<TH> Region </TH>
+	  					<TH> 2013 Jobs </TH>
+	  					<TH> 2018 Jobs </TH>
+	  					<TH> Change </TH>
+	  					<TH> %Change </TH>
 	  				</tr>
 	  				<JobsCells />
 	  			</tbody>

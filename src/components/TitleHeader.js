@@ -23,7 +23,7 @@ const Div = styled.div`
 const TitleHeader = () => {
 
 	const occData = useSelector(getOccData)
-	console.log(occData)
+	// console.log(occData)
 
   return (
     <Div>

@@ -52,7 +52,7 @@ const OccDataTable = () => {
 
 
 	}, [jsonData, occData])
-	console.log(jobs)
+	// console.log(jobs)
 	
   return (
     <Div>
