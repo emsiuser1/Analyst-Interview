@@ -33,6 +33,9 @@ const Header = styled.h3`
 const CellNumbers = styled.h2`
 	color: #204354;
 `
+const currencyFormat = (num) => {
+  return '$' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+}
 
 const OccDataTable = () => {
 
@@ -76,9 +79,9 @@ const OccDataTable = () => {
     				</th>
 
     				<th style={{borderLeft: 'solid #819bb1 1px', padding: '5px', width: '33%'}}>
-    				  <CellNumbers> ${Math.round(occData[0]['data'][3]['rows'][0])}/hr </CellNumbers>
+    				  <CellNumbers> {currencyFormat(Math.round(occData[0]['data'][3]['rows'][0] * 100) / 100)}/hr </CellNumbers>
     				  <span style={{color: '#204354'}}> Median Hourly Earnings </span>
-    				  <h5 style={{color: '#204354'}}> Nation: ${Math.round(occData[3]['earnings'])}/hr </h5>
+    				  <h5 style={{color: '#204354'}}> Nation: {currencyFormat(Math.round(occData[3]['earnings'] * 100) / 100)}/hr </h5>
     				</th>
 
     			</tr>

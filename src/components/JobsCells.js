@@ -5,11 +5,12 @@ import styled from 'styled-components';
 import { getOccData, getJsonData } from '../reducers'
 
 
-// Add the ability 
-
-
 const TD = styled.td`
 	text-align: left;
+`
+const TR = styled.tr`
+	padding: 10px;
+	border-bottom: solid 2px lightgrey;
 `
 
 const JobsCells = () => {
@@ -46,15 +47,19 @@ const JobsCells = () => {
 		}
 	}, [occData])
 
+	const formatNum = (num) => {
+	  return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') //adds commas to numbers
+	}
+
 
   return (regional[1] !== undefined ? regional.map((region, i) => (
-  	<tr>
+  	<TR>
   		<TD> {region['name']}     </TD>
-  		<TD> {region['jobs2013']} </TD>
-  		<TD> {region['jobs2018']} </TD>
-  		<TD> {region['jobs2018'] - region['jobs2013']} </TD>
+  		<TD> {formatNum(region['jobs2013'])} </TD>
+  		<TD> {formatNum(region['jobs2018'])} </TD>
+  		<TD> {formatNum(region['jobs2018'] - region['jobs2013'])} </TD>
   		<TD> {Math.round(((region['jobs2018'] - region['jobs2013']) / region['jobs2013']) * 1000)/ 10}% </TD>
-  	</tr>
+  	</TR>
   )) : '')
 }
 

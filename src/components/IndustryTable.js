@@ -28,7 +28,7 @@ const Header = styled.h2`
 `
 const TH = styled.th`
 	color: #204354;
-	text-align: left;
+	text-align: right;
 `
 
 const IndustryTable = () => {
@@ -40,8 +40,10 @@ const IndustryTable = () => {
 	  		<Table>
 	  			<tbody>
 	  				<tr>
-	  					<TH> Industry </TH>
+	  					<TH style={{width: '50%', textAlign: 'left'}}> Industry </TH>
 	  					<TH> Occupation Jobs in Industry (2015) </TH>
+	  					<TH> % of Occupation in Industry (2015) </TH>
+	  					<TH> % of Total Jobs in Industry (2015) </TH>
 	  				</tr>
 	  				<IndustryCells />
 	  			</tbody>

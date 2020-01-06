@@ -5,22 +5,33 @@ import styled from 'styled-components';
 import { getOccData, getJsonData } from '../reducers'
 
 const TD = styled.td`
-	text-align: left;
+	text-align: right;
+`
+const TR = styled.tr`
+
 `
 
 const IndustryCells = () => {
 
 	const industries = useSelector(getJsonData)
+  const [empIndustries, setEmpIndustries] = useState([])
+  const [totalJobs, setTotalJobs] = useState(0)
 	useEffect(() => {
 
-	}, [])
+    if (industries['employing_industries']) {
+      setEmpIndustries(industries['employing_industries'])
+      setTotalJobs(industries['employing_industries']['jobs'])
+    }
+	}, [industries])
 
 
-  return (industries['employing_industries'] !== undefined ? industries['employing_industries']['industries'].map((industry, i) => (
-  	<tr key={i}>
-  		<TD> {industry.title} </TD>
-  		<TD> {industry.jobs} </TD>
-  	</tr>
+  return ( empIndustries['industries'] !== undefined ? empIndustries['industries'].map((industry, i) => (
+  	<TR key={i} style={{backgroundSize: '37%', backgroundColor: 'lightblue'}}>
+  		<TD style={{textAlign: 'left'}}> {industry.title} </TD>
+  		<TD> {industry.in_occupation_jobs} </TD>
+      <TD> {Math.round(industry.in_occupation_jobs / totalJobs * 1000) / 10}% </TD>
+      <TD> {Math.round(industry.in_occupation_jobs / industry.jobs * 1000) / 10}% </TD>
+  	</TR>
   )) : '')
 }
 
