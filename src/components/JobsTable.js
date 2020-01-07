@@ -1,8 +1,5 @@
-import React, { useEffect, useState, Fragment } from 'react';
-import { useSelector } from 'react-redux';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
-
-import { getOccData} from '../reducers'
 import JobsCells from './JobsCells'
 
 
@@ -19,10 +16,6 @@ const Table = styled.table`
 	margin-bottom: 2%;
 `
 
-const Header = styled.h2`
-	color: #204354;
-	margin-left: 2%;
-`
 const TH = styled.th`
 	text-align: left;
 	color: #204354;

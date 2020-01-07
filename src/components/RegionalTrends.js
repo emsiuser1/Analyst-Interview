@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { Line } from 'react-chartjs-2';
 import styled from 'styled-components'
 //npm install chart.js --save
@@ -6,10 +6,7 @@ import styled from 'styled-components'
 //fix graph to display correct data
 //turn into percentages
 
-import { getJsonData } from '../reducers'
-import { useSelector } from 'react-redux'
-
-const RegionalTrends = () => {
+const RegionalTrends = (props) => {
 
 	const Div = styled.div`
 		margin-left: 2%;
@@ -22,21 +19,21 @@ const RegionalTrends = () => {
 			{
 				label: 'Regional Trends',
 				fill: false,
-				data: [1,2,3,4,5, 10],
+				data: props.regionalTrends[0],
 				borderColor: '#204354',
 				backgroundColor: '#41d592'
 			},
 			{
 				label: 'State Trends',
 				fill: false,
-				data: [8,4,6,0,1, 4],
+				data: props.regionalTrends[1],
 				borderColor: '#41d592',
 				backgroundColor: '#204354'
 			},
 			{
 				label: 'National Trends',
 				fill: false,
-				data: [5,1,1,2,12,2],
+				data: props.regionalTrends[2],
 				borderColor: '#5b5aec',
 				backgroundColor: '#204354'
 			}

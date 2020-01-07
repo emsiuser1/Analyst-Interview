@@ -1,8 +1,8 @@
-import React, { useEffect, useState, Fragment } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
-import { getOccData, getJsonData } from '../reducers'
+import { getJsonData } from '../reducers'
 
 const TD = styled.td`
 	text-align: right;

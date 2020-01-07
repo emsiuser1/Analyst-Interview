@@ -1,8 +1,8 @@
-import React, { useEffect, useState, Fragment } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
-import { getOccData, getJsonData } from '../reducers'
+import { getJsonData } from '../reducers'
 
 
 const TD = styled.td`
@@ -15,13 +15,12 @@ const TR = styled.tr`
 
 const JobsCells = () => {
 
-	const industries = useSelector(getJsonData)
 	const [regional, setRegional] = useState([])
 
 	const occData = useSelector(getJsonData)
 	// console.log(occData)
 	useEffect(() => {
-		if (occData['trend_comparison'] !== undefined) {
+		if (occData['trend_comparison']) {
 			const trendComps = occData['trend_comparison'] //trendComps === trend_comparison
 			const tmp = 
 				[
@@ -52,8 +51,8 @@ const JobsCells = () => {
 	}
 
 
-  return (regional[1] !== undefined ? regional.map((region, i) => (
-  	<TR>
+  return (regional[1] ? regional.map((region, i) => (
+  	<TR key={i}>
   		<TD> {region['name']}     </TD>
   		<TD> {formatNum(region['jobs2013'])} </TD>
   		<TD> {formatNum(region['jobs2018'])} </TD>

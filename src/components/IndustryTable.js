@@ -1,8 +1,6 @@
-import React, { useEffect, useState, Fragment } from 'react';
-import { useSelector } from 'react-redux';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
-import { getOccData} from '../reducers'
 import IndustryCells from './IndustryCells'
 
 //To do:

@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { setOccData, setJsonData } from '../actions'
-import { getOccData, getJsonData } from '../reducers'
 
 const EarningsData = () => {
 
@@ -19,7 +18,7 @@ const EarningsData = () => {
 			.then(data => {
 				dispatch(setJsonData(data))
 			})
-	}, [])
+	}, [dispatch])
 
   return (
     <div>
